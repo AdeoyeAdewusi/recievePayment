@@ -234,6 +234,7 @@ color: #3E3E3E !important;
     /* gap: 122px; */
     height: 100%;
     flex-direction: column;
+    align-items: center;
 }
 .recievePaymentBox {
     background: #FEFEFE;
