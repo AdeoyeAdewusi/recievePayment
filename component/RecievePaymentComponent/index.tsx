@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { TbCreditCard } from "react-icons/tb";
 import styles from "./styles.module.css";
@@ -6,39 +6,37 @@ import CardDetails from "./CardDtails";
 import USSDInput from "./Ussd";
 import QrInput from "./Qr";
 import Transfer from "./Transfer";
+import { useRouter } from "next/router";
+import { BiPhoneCall, BiTransferAlt } from "react-icons/bi";
 
 const ReacievePaymntComponent = ({
-  action,
   newPage,
+  data,
+  paymenttype,
 }: {
-  action: any;
   newPage: any;
+  data: any;
+  paymenttype: any;
 }) => {
+  const router = useRouter();
   const [activeBtn, setActiveBtn] = useState(true);
   const [page, setPage] = useState(newPage);
-  const [selcted, setSelected] = useState("card");
+  const [selcted, setSelected] = useState(paymenttype);
+  useEffect(() => {
+    setSelected(router.query.index);
+    console.log(router.query);
+  }, [router.query.index]);
+
   const PaylinkComponenet = () => {
     switch (selcted) {
       case "card":
-        switch (page) {
-          case 1:
-            return <CardDetails action={""} />;
-        }
+        return <CardDetails action={""} />;
       case "transfer":
-        switch (page) {
-          case 1:
-            return <Transfer />;
-        }
-      case "Ussd":
-        switch (page) {
-          case 1:
-            return <USSDInput />;
-        }
+        return <Transfer />;
+      case "ussd":
+        return <USSDInput ussd={router?.query.data} />;
       case "qr":
-        switch (page) {
-          case 1:
-            return <QrInput />;
-        }
+        return <QrInput qrData={router?.query.data} />;
     }
   };
   return (
@@ -47,22 +45,33 @@ const ReacievePaymntComponent = ({
         {" "}
         <div className={styles.cardDetsCard}>
           <p>Choose Channel</p>
-          <div className={styles.marvel} onClick={() => setSelected("card")}>
+          <div
+            className={selcted === "card" ? styles.marvel : styles.notMarvel}
+            onClick={() => setSelected("card")}
+          >
             <TbCreditCard />
             <p>Card</p>
           </div>
           <div
-            className={styles.marvel}
+            className={
+              selcted === "transfer" ? styles.marvel : styles.notMarvel
+            }
             onClick={() => setSelected("transfer")}
           >
-            <TbCreditCard />
+            <BiTransferAlt />
             <p>Transfer</p>
           </div>
-          <div className={styles.marvel} onClick={() => setSelected("Ussd")}>
-            <TbCreditCard />
+          <div
+            className={selcted === "ussd" ? styles.marvel : styles.notMarvel}
+            onClick={() => setSelected("Ussd")}
+          >
+            <BiPhoneCall />
             <p>USSD</p>
           </div>
-          <div className={styles.marvel} onClick={() => setSelected("qr")}>
+          <div
+            className={selcted === "qr" ? styles.marvel : styles.notMarvel}
+            onClick={() => setSelected("qr")}
+          >
             <TbCreditCard />
             <p>QR</p>
           </div>

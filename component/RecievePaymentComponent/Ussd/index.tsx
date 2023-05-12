@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import Lottie from "react-lottie";
 import animationData from "../../Lotties/call.json";
-const USSDInput = () => {
+const USSDInput = ({ ussd }: { ussd: any }) => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -28,6 +28,9 @@ const USSDInput = () => {
     // unsubscribe from the event on component unmount
     return () => window.removeEventListener("resize", handleWindowResize);
   }, [width]);
+  function handleButtonClick() {
+    window.location.href = ussd;
+  }
   return (
     <div className={styles.paylinkInut}>
       <Lottie
@@ -35,9 +38,9 @@ const USSDInput = () => {
         height={width > 990 ? 500 : 200}
         width={width > 990 ? 500 : 200}
       />
-      <a href="*303*238473*2000#">
-        <button>*303*238473*2000#</button>
-      </a>
+      <button onClick={handleButtonClick} className={styles.ussBtn}>
+        {ussd}
+      </button>
     </div>
   );
 };

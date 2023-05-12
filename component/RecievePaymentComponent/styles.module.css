@@ -69,6 +69,21 @@ color: #2F2F2F;
     color: #6CCF00 !important;
     font-size: 35px;
 }
+.notMarvel{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: 'Inter';
+    color: #262626 !important;
+    font-size: 35px;
+}
+.notMarvel p{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 24px;
+    color: #262626 !important;
+}
 .marvel p{
     font-style: normal;
     font-weight: 700;
@@ -235,10 +250,10 @@ color: #3E3E3E !important;
     scrollbar-width: none;
 }
 .cardDetsCard {
-    padding: 131px 36px;
+    padding: 68px 38px;
     width: 100%;
     background: #F1F9E8;
-    height: 100%;
+    height: 30%;
     border-radius: 20px 0px 0px 20px;
     overflow: scroll;
     display: flex;
