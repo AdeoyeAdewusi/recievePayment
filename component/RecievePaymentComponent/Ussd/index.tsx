@@ -38,9 +38,11 @@ const USSDInput = ({ ussd }: { ussd: any }) => {
         height={width > 990 ? 500 : 200}
         width={width > 990 ? 500 : 200}
       />
-      <button onClick={handleButtonClick} className={styles.ussBtn}>
-        {ussd}
-      </button>
+      <a href={`tel:${ussd}`}>
+        <button onClick={handleButtonClick} className={styles.ussBtn}>
+          {ussd}
+        </button>
+      </a>
     </div>
   );
 };
