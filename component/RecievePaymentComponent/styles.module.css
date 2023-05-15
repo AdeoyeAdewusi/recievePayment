@@ -70,19 +70,23 @@ color: #2F2F2F;
     font-size: 35px;
 }
 .notMarvel{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    font-family: 'Inter';
-    color: #262626 !important;
-    font-size: 35px;
+ font-style: normal;
+ display: flex;
+ gap: 10px;
+ align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: #26262696 !important;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
 }
 .notMarvel p{
     font-style: normal;
     font-weight: 700;
     font-size: 15px;
     line-height: 24px;
-    color: #262626 !important;
+    /* color: #262626 !important; */
 }
 .marvel p{
     font-style: normal;
@@ -90,6 +94,8 @@ color: #2F2F2F;
     font-size: 20px;
     line-height: 24px;
     color: #6CCF00 !important;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
 }
 .cardDtsInputs{
     padding: 40px 32px;
