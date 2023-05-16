@@ -2,7 +2,17 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import Lottie from "react-lottie";
 import animationData from "../../Lotties/qr.json";
-const QrInput = ({ qrData }: { qrData: any }) => {
+const QrInput = ({
+  set,
+  qrData,
+  terminalId,
+  marchantCode,
+}: {
+  set: any;
+  qrData: any;
+  terminalId: any;
+  marchantCode: any;
+}) => {
   const [qrDatas, setQrData] = useState("");
   const defaultOptions = {
     loop: true,
@@ -13,20 +23,30 @@ const QrInput = ({ qrData }: { qrData: any }) => {
     },
   };
   useEffect(() => {
-    setQrData(`data:image/png;base64,${qrData}`?.split(" ")?.join(""));
+    setQrData(
+      `data:image/png;base64,${decodeURIComponent(qrData)}`
+        ?.split(" ")
+        ?.join("")
+    );
   }, [qrData]);
   return (
     <div className={styles.qrInp}>
       <Lottie options={defaultOptions} height={200} width={200} />
-      <img src={qrDatas} width={254} height={254} />
-      <div>
-        <p>Merchant ID:</p>
-        <p>1234567890</p>
-      </div>
-      <div>
-        <p>Terminal ID:</p>
-        <p>1234567890</p>
-      </div>
+      {set == "qr" ? (
+        <>
+          <img src={qrDatas} width={254} height={254} />
+          <div>
+            <p>Merchant ID:</p>
+            <p>{marchantCode}</p>
+          </div>
+          <div>
+            <p>Terminal ID:</p>
+            <p>{terminalId}</p>
+          </div>
+        </>
+      ) : (
+        <p>You Did Not Select Qr Code</p>
+      )}
     </div>
   );
 };

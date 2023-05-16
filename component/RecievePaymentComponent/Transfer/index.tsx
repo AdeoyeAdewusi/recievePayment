@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import Lottie from "react-lottie";
 import animationData from "../../Lotties/transfer.json";
-const Transfer = () => {
+const Transfer = ({ information }: { information: any }) => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -32,20 +32,22 @@ const Transfer = () => {
     <div className={styles.accountInfo}>
       <Lottie
         options={defaultOptions}
-        height={width > 990 ? 500 : 200}
-        width={width > 990 ? 500 : 200}
+        height={width > 990 ? 300 : 200}
+        width={width > 990 ? 300 : 200}
       />{" "}
       <div>
         <p>Account Number:</p>
-        <p>1234567890</p>
+        <p>{information?.accountNumber}</p>
       </div>
-      <div>
-        <p>Account Name:</p>
-        <p>1234567890</p>
-      </div>
+      {information?.accountName ? (
+        <div>
+          <p>Account Name:</p>
+          <p>{information?.accountName}</p>
+        </div>
+      ) : null}
       <div>
         <p>Bank Name:</p>
-        <p>1234567890</p>
+        <p>Ecobank</p>
       </div>
       <div>
         <p>Ammount:</p>

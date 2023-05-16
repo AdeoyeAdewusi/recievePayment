@@ -10,10 +10,12 @@ import { useRouter } from "next/router";
 import { BiPhoneCall, BiTransferAlt } from "react-icons/bi";
 
 const ReacievePaymntComponent = ({
+  info,
   newPage,
   data,
   paymenttype,
 }: {
+  info: any;
   newPage: any;
   data: any;
   paymenttype: any;
@@ -32,11 +34,23 @@ const ReacievePaymntComponent = ({
       case "card":
         return <CardDetails action={""} />;
       case "transfer":
-        return <Transfer />;
+        return <Transfer information={info} />;
       case "ussd":
-        return <USSDInput ussd={router?.query.data} />;
+        return (
+          <USSDInput
+            set={router?.query.index}
+            ussd={router?.query.index == "ussd" ? router?.query.data : null}
+          />
+        );
       case "qr":
-        return <QrInput qrData={router?.query.data} />;
+        return (
+          <QrInput
+            terminalId={router?.query?.terminalId}
+            marchantCode={router?.query?.merchantCode}
+            set={router?.query.index}
+            qrData={router?.query.index == "qr" ? router?.query.data : null}
+          />
+        );
     }
   };
   return (
@@ -63,7 +77,7 @@ const ReacievePaymntComponent = ({
           </div>
           <div
             className={selcted === "ussd" ? styles.marvel : styles.notMarvel}
-            onClick={() => setSelected("Ussd")}
+            onClick={() => setSelected("ussd")}
           >
             <BiPhoneCall />
             <p>USSD</p>

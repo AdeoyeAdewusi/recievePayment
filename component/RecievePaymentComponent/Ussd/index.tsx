@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import Lottie from "react-lottie";
 import animationData from "../../Lotties/call.json";
-const USSDInput = ({ ussd }: { ussd: any }) => {
+const USSDInput = ({ set, ussd }: { set: any; ussd: any }) => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -40,7 +40,7 @@ const USSDInput = ({ ussd }: { ussd: any }) => {
       />
       <a href={`tel:${ussd}`}>
         <button onClick={handleButtonClick} className={styles.ussBtn}>
-          {ussd}
+          {set == "ussd" ? ussd : "*326*000*refCode#"}
         </button>
       </a>
     </div>

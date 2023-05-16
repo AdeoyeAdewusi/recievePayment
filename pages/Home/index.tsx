@@ -11,6 +11,7 @@ const HomeMain = () => {
       case "PaymentItem":
         return (
           <ReacievePaymntComponent
+            info=""
             paymenttype=""
             data={router.query.data}
             newPage={1}
