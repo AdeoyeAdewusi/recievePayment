@@ -35,9 +35,10 @@ const USSDInput = ({ set, ussd }: { set: any; ussd: any }) => {
     <div className={styles.paylinkInut}>
       <Lottie
         options={defaultOptions}
-        height={width > 990 ? 500 : 200}
-        width={width > 990 ? 500 : 200}
+        height={width > 990 ? 300 : 200}
+        width={width > 990 ? 300 : 200}
       />
+      <p>Click on the button to make the payment</p>
       <a href={`tel:${ussd}`}>
         <button onClick={handleButtonClick} className={styles.ussBtn}>
           {set == "ussd" ? ussd : "*326*000*refCode#"}
