@@ -38,9 +38,7 @@ const QrInput = ({
             <ElevateLogo />
             <img src={qrDatas} width={254} height={254} />
           </div>
-          <p>
-            {(information?.qrMerchantInfo?.terminalName).toLowerCase()}QR Code
-          </p>
+          <p>{information?.qrMerchantInfo?.terminalName}QR Code</p>
           <div>
             <p>Merchant ID:</p>
             <p>{marchantCode}</p>
@@ -60,10 +58,7 @@ const QrInput = ({
               height={254}
             />
           </div>
-          <p>
-            {(information?.qrMerchantInfo?.terminalName).toLowerCase()} static
-            QR code
-          </p>
+          <p>{information?.qrMerchantInfo?.terminalName} static QR code</p>
           <div>
             <p>Merchant ID:</p>
             <p>{information?.qrMerchantInfo?.merchantCode}</p>
