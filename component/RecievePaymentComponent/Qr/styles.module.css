@@ -1,11 +1,25 @@
 .qrInp{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 0px;
     align-items: center;
 }
 .qrInp div{
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 9px;
+}
+.qrInp div p{
+color: black;
+}
+.download{
+    text-align: center;
+    text-decoration: underline;
+    color: #6CCF00 !important;
+    cursor: pointer;
+}
+.logoQr{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

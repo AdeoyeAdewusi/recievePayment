@@ -70,6 +70,14 @@ color: #2F2F2F;
     color: #6CCF00 !important;
     font-size: 35px;
 }
+.cancelPay{
+    cursor: pointer;
+    color: #6CCF00 !important;
+}
+.cancelPay:hover{
+    color: #6CCF00 !important;
+    text-decoration: underline;
+}
 .marvel p{
     font-style: normal;
     font-weight: 700;
@@ -127,4 +135,9 @@ border-radius: 12px;
 
 .buttonTop{
     margin-top: 24px;
+}
+.loadFlex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

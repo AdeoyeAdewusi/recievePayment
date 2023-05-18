@@ -3,9 +3,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 0px;
 }
     
 .ussBtn{
     padding: 23px !important;
+}
+.ussdCode{
+    text-align: center;
+    text-decoration: underline;
+    color: #6CCF00 !important;
+    cursor: pointer;
+}
+.h1Code{
+    color: white !important;
+}
+.complete{
+    text-align: center;
+    text-decoration: underline;
+    color: #6CCF00 !important;
+    cursor: pointer;
+}
+.complete:hover{
+    text-align: center;
+    color: #6CCF00 !important;
+    cursor: pointer;
 }

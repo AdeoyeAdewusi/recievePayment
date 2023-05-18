@@ -24,7 +24,18 @@ scrollbar-width: none;
     
     display: flex;
 }
-
+.complete{
+    text-align: center;
+    text-decoration: underline;
+    color: #6CCF00 !important;
+    cursor: pointer;
+    margin-top: 10%;
+}
+.complete:hover{
+    text-align: center;
+    color: #6CCF00 !important;
+    cursor: pointer;
+}
 .recievePaymentBox p{
     font-family: 'Inter';
     font-style: normal;
@@ -63,6 +74,16 @@ color: #2F2F2F;
     color: #6CCF00 !important;
     font-size: 35px;
 }
+.inputCopy{
+    display: flex;
+    align-items: center;
+}
+.inputCopy p{
+    margin-left: -58px;
+    z-index: 10;
+    cursor: pointer;
+    color: #6CCF00 !important;
+}
 .marvel p{
     font-style: normal;
     font-weight: 700;
@@ -70,8 +91,11 @@ color: #2F2F2F;
     line-height: 24px;
     color: #6CCF00 !important;
 }
+.paylinkInput{
+    padding-right: 70px;
+}
 .cardDtsInputs{
-    padding: 40px 32px;
+    padding: 0px 50px;
     width: 100%;
 }
 .cardDtsInputs input{

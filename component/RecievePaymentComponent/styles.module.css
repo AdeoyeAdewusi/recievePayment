@@ -5,9 +5,7 @@ border: 1px solid rgba(219, 219, 219, 0.6);
 border-radius: 12px;
 min-width:918px;
 max-width:918px;
-height: 790px;
-min-height: 790px;
-max-height: 790px;
+height: 51vh;
 overflow: scroll;
 -ms-overflow-style: none;  /* IE and Edge */
 scrollbar-width: none; 
@@ -17,7 +15,6 @@ scrollbar-width: none;
   }
   
 .logoLeft{
-    
     display: flex;
 }
 .recievePaymentBox h1{
@@ -97,14 +94,40 @@ color: #2F2F2F;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
 }
+.sidesII{
+    width: 100%;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+    }
+    .sidesII::-webkit-scrollbar {
+        display: none;
+      }
+      
 .cardDtsInputs{
     padding: 40px 32px;
+    gap: 10px;
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.cardDtsInputs p{
+    margin: 0px;
+}
+.cardDtsInputs h2{
+    margin: 0px;
+    color: #3E3E3E;
+    font-size: 20px;
+}
+.cardDtsInputsII{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
-.cardDtsInputs h1{
+.sidesII h1{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;

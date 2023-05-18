@@ -1,8 +1,20 @@
 .accountInfo div{
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    justify-content: center;
     align-items: center;
 }
-.accountInfo p{
-    color: black;
+.data p{
+    color: black !important;
+}
+.complete{
+    text-align: center;
+    text-decoration: underline;
+    color: #6CCF00 !important;
+    cursor: pointer;
+}
+.complete:hover{
+    text-align: center;
+    color: #6CCF00 !important;
+    cursor: pointer;
 }
