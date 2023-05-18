@@ -25,6 +25,9 @@ const ReacievePaymntComponent = ({
   const [activeBtn, setActiveBtn] = useState(true);
   const [page, setPage] = useState(newPage);
   const [selcted, setSelected] = useState(paymenttype);
+  useEffect(() => {
+    setSelected(paymenttype);
+  }, [paymenttype]);
 
   const PaylinkComponenet = () => {
     switch (selcted) {
