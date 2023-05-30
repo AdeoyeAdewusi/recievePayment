@@ -5,16 +5,15 @@
     align-items: center;
 }
 .qrInp div{
-    display: flex;
+    display: block;
     align-items: center;
-    gap: 9px;
 }
 .qrInp div p{
 color: black;
 }
 .download{
     text-align: center;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: #6CCF00 !important;
     cursor: pointer;
 }
@@ -22,4 +21,13 @@ color: black;
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+.qrFlex{
+    display: flex !important;
+    gap: 60px;
+}
+
+.qrInfo{
+    display: flex !important;
+    gap: 20px;
 }

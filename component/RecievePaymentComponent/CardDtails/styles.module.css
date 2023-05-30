@@ -26,7 +26,7 @@ scrollbar-width: none;
 }
 .complete{
     text-align: center;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: #6CCF00 !important;
     cursor: pointer;
     margin-top: 10%;

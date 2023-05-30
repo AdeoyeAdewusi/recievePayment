@@ -77,13 +77,14 @@ const USSDInput = ({
   };
   return (
     <div className={styles.paylinkInut}>
-      <Lottie
+      {/* <Lottie
         options={defaultOptions}
         height={width > 990 ? 200 : 200}
         width={width > 990 ? 200 : 200}
-      />
+      /> */}
       <p>Click on the button to make the payment</p>
       <a href={`tel:${ussd}`}>
+        <p className={styles.complete}>Please Pay {amount}</p>
         <button onClick={handleButtonClick} className={styles.ussBtn}>
           <h1 className={styles.h1Code}>
             {set == "ussd" ? `${ussd}#` : "*326*000*refCode#"}
@@ -93,7 +94,6 @@ const USSDInput = ({
       <p className={styles.ussdCode} onClick={copyUssd}>
         {isCopied ? "Copied" : "Copy"} the USSD Code.
       </p>
-      <p className={styles.complete}>Pay {amount}</p>
     </div>
   );
 };

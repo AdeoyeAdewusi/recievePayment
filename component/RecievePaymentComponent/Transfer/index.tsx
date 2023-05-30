@@ -63,16 +63,16 @@ const Transfer = ({
             <p>Ammount:</p>
             <p>1234567890</p>
           </div>
-
-          <button>Pay {amount}</button>
-          <div>
-            <p
-              className={styles.complete}
-              onClick={() => setPayentComp((prev) => !prev)}
-            >
-              I have Completed the payment
-            </p>
-          </div>
+          <p
+            className={styles.complete}
+            onClick={() => setPayentComp((prev) => !prev)}
+          >
+            Please Pay {amount}
+          </p>
+          <button className={styles.compPlay}>
+            I have Completed the payment
+          </button>
+          <div></div>
         </div>
       ) : (
         <BillingAddress

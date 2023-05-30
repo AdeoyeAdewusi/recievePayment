@@ -35,46 +35,62 @@ const QrInput = ({
       {set == 'qr' ? (
         <>
           <div ref={exportRef} className={styles.logoQr}>
-            <ElevateLogo />
-            <img src={qrDatas} width={254} height={254} />
-          </div>
-          <p>{information?.qrMerchantInfo?.terminalName} QR Code</p>
-          <div>
-            <p>Merchant ID:</p>
-            <p>{marchantCode}</p>
-          </div>
-          <div>
-            <p>Terminal ID:</p>
-            <p>{terminalId}</p>
+            <div className={styles.qrFlex}>
+              <div ref={exportRef}>
+                <ElevateLogo />
+                <br />
+                <img src={qrDatas} width={254} height={254} />
+              </div>
+            </div>
+            <p>{information?.qrMerchantInfo?.terminalName} QR Code</p>
+            <div className={styles.qrInfo}>
+              <p>Merchant ID:</p>
+              <p>{marchantCode}</p>
+            </div>
+            <div className={styles.qrInfo}>
+              <p>Terminal ID:</p>
+              <p>{terminalId}</p>
+            </div>
           </div>
         </>
       ) : (
         <>
-          <div ref={exportRef} className={styles.logoQr}>
-            <ElevateLogo />
-            <img
-              src={`data:image/png;base64,${information?.qrMerchantInfo?.merchantsStaticQR}`}
-              width={254}
-              height={254}
-            />
-          </div>
-          <p>{information?.qrMerchantInfo?.terminalName} static QR code</p>
-          <div>
-            <p>Merchant ID:</p>
-            <p>{information?.qrMerchantInfo?.merchantCode}</p>
-          </div>
-          <div>
-            <p>Terminal ID:</p>
-            <p>{information?.qrMerchantInfo?.terminalId}</p>
-          </div>
+          <div className={styles.logoQr}>
+            <div className={styles.qrFlex}>
+              <div ref={exportRef}>
+                <ElevateLogo />
+                <br />
+                <img
+                  src={`data:image/png;base64,${information?.qrMerchantInfo?.merchantsStaticQR}`}
+                  width={254}
+                  height={254}
+                />
+              </div>
 
-          <p
-            className={styles.download}
-            onClick={() => exportAsImage(exportRef.current, 'test')}
-          >
-            Download
-          </p>
-          <button>Pay {amount}</button>
+              <div>
+                <br />
+                <p className={styles.qrNameP}>
+                  {information?.qrMerchantInfo?.terminalName}
+                </p>
+                <div className={styles.qrInfo}>
+                  <p>Merchant ID:</p>
+                  <p>{information?.qrMerchantInfo?.merchantCode}</p>
+                </div>
+                <div className={styles.qrInfo}>
+                  <p>Terminal ID:</p>
+                  <p>{information?.qrMerchantInfo?.terminalId}</p>
+                </div>
+
+                <button
+                  onClick={() => exportAsImage(exportRef.current, 'test')}
+                >
+                  {' '}
+                  Download
+                </button>
+                <p className={styles.download}>Please Pay {amount}</p>
+              </div>
+            </div>
+          </div>
         </>
       )}
     </div>

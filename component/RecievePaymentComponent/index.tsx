@@ -97,7 +97,7 @@ const ReacievePaymntComponent = ({
           <div className={styles.cardDtsInputs}>
             <h2>{info?.qrMerchantInfo?.terminalName}</h2>
 
-            <p>Merchant Link</p>
+            <p>Payment Link</p>
           </div>
           <div className={styles.cardDtsInputsII}>{PaylinkComponenet()}</div>
         </div>

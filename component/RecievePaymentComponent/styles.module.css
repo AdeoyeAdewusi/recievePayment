@@ -43,11 +43,11 @@ color: #005B82;
     height: 100%;
 }
 .cardDetsCard{
-    padding: 131px 36px;
+    padding: 40px 36px;
     width: 35%;
     background: #F1F9E8;
     height: 100%;
-border-radius: 20px 0px 0px 20px;
+    border-radius: 20px 0px 0px 20px;
 }
 .cardDetsCard p:nth-child(1){
     font-family: 'Inter';

@@ -34,7 +34,7 @@ const CardDetails = ({ action, amount }: { action: any; amount: any }) => {
     <>
       {payentComp ? (
         <div className={styles.cardDtsInputs}>
-          <p className={styles.complete}>Pay {amount}</p>
+          <p className={styles.complete}>Please Pay {amount}</p>
           <div className={styles.inputCopy}>
             <input
               className={styles.paylinkInput}
