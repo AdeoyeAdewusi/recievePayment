@@ -60,7 +60,7 @@ const Transfer = ({
             <p>Ecobank</p>
           </div>
           <div className={styles.data}>
-            <p>Ammount:</p>
+            <p>Amount:</p>
             <p>1234567890</p>
           </div>
           <p
